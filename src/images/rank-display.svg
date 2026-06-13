@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="200" viewBox="0 0 800 200">
+  <rect width="800" height="200" fill="#080000"/>
+  <!-- D rank -->
+  <rect x="10" y="30" width="120" height="140" rx="6" fill="#3a3a3a" stroke="#555" stroke-width="2"/>
+  <text x="70" y="120" text-anchor="middle" fill="#aaaaaa" font-size="80" font-family="Impact" font-weight="bold">D</text>
+  <!-- C rank -->
+  <rect x="145" y="30" width="120" height="140" rx="6" fill="#1a3a1a" stroke="#33aa33" stroke-width="2"/>
+  <text x="205" y="120" text-anchor="middle" fill="#44cc44" font-size="80" font-family="Impact" font-weight="bold">C</text>
+  <!-- B rank -->
+  <rect x="280" y="30" width="120" height="140" rx="6" fill="#1a1a3a" stroke="#3333aa" stroke-width="2"/>
+  <text x="340" y="120" text-anchor="middle" fill="#4444cc" font-size="80" font-family="Impact" font-weight="bold">B</text>
+  <!-- A rank -->
+  <rect x="415" y="30" width="120" height="140" rx="6" fill="#3a2a0a" stroke="#aaaa33" stroke-width="2"/>
+  <text x="475" y="120" text-anchor="middle" fill="#cccc44" font-size="80" font-family="Impact" font-weight="bold">A</text>
+  <!-- S rank -->
+  <rect x="550" y="30" width="120" height="140" rx="6" fill="#3a0a0a" stroke="#ff4444" stroke-width="2"/>
+  <text x="610" y="120" text-anchor="middle" fill="#ff4444" font-size="80" font-family="Impact" font-weight="bold">S</text>
+  <!-- P rank -->
+  <rect x="670" y="10" width="120" height="180" rx="6" fill="#ff000033" stroke="#ff0000" stroke-width="3"/>
+  <text x="730" y="125" text-anchor="middle" fill="#ff0000" font-size="90" font-family="Impact" font-weight="bold">P</text>
+  <text x="730" y="185" text-anchor="middle" fill="#ff666666" font-size="14" font-family="monospace">PRIME</text>
+</svg>

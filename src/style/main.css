@@ -1,0 +1,656 @@
+/* ============================================================
+   ULTRAKILL FAN SITE — main.css
+   Design language: CRT corruption, machine-hell brutalism,
+   blood-red on void-black, monospaced precision
+   ============================================================ */
+
+/* ── Google Fonts import (loaded from index.html) ─────────── */
+
+/* ── CSS Custom Properties ─────────────────────────────────── */
+:root {
+  /* Palette */
+  --blood:       #ff0000;
+  --blood-dark:  #8b0000;
+  --blood-dim:   #3a0000;
+  --void:        #000000;
+  --void-lift:   #0d0000;
+  --void-mid:    #1a0505;
+  --ash:         #aaaaaa;
+  --ash-dim:     #555555;
+  --white:       #ffffff;
+  --gold:        #ffcc00;
+  --gold-dim:    #aa8800;
+  --cyan:        #00ccff;
+
+  /* Rank colours */
+  --rank-d:      #888888;
+  --rank-c:      #44cc44;
+  --rank-b:      #4488ff;
+  --rank-a:      #ffcc00;
+  --rank-s:      #ff4444;
+  --rank-p:      #ff0000;
+
+  /* Typography */
+  --font-display: 'Oswald', 'Impact', 'Arial Narrow', sans-serif;
+  --font-body:    'Share Tech Mono', 'Courier New', monospace;
+  --font-ui:      'Rajdhani', 'Arial', sans-serif;
+
+  /* Spacing scale */
+  --sp-xs:  4px;
+  --sp-sm:  8px;
+  --sp-md:  16px;
+  --sp-lg:  32px;
+  --sp-xl:  64px;
+  --sp-2xl: 96px;
+
+  /* Transitions */
+  --tx-fast:  0.15s ease;
+  --tx-mid:   0.3s ease;
+}
+
+/* ── Reset ─────────────────────────────────────────────────── */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; font-size: 16px; }
+body {
+  background-color: var(--void);
+  color: var(--ash);
+  font-family: var(--font-body);
+  line-height: 1.6;
+  overflow-x: hidden;
+}
+img, svg { display: block; max-width: 100%; }
+a { color: var(--blood); text-decoration: none; transition: color var(--tx-fast); }
+a:hover { color: var(--white); }
+ul { list-style: none; }
+
+/* ── Scrollbar ─────────────────────────────────────────────── */
+::-webkit-scrollbar              { width: 6px; }
+::-webkit-scrollbar-track        { background: var(--void-lift); }
+::-webkit-scrollbar-thumb        { background: var(--blood-dark); border-radius: 3px; }
+::-webkit-scrollbar-thumb:hover  { background: var(--blood); }
+
+/* ── CRT Scanline overlay (signature element) ──────────────── */
+body::after {
+  content: '';
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 9999;
+  background: repeating-linear-gradient(
+    0deg,
+    transparent,
+    transparent 2px,
+    rgba(0,0,0,0.08) 2px,
+    rgba(0,0,0,0.08) 4px
+  );
+}
+
+/* ── NAVIGATION ────────────────────────────────────────────── */
+.nav {
+  position: fixed;
+  top: 0; left: 0; right: 0;
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 var(--sp-lg);
+  height: 64px;
+  background: rgba(0,0,0,0.92);
+  border-bottom: 1px solid var(--blood-dim);
+  backdrop-filter: blur(8px);
+}
+
+.nav__logo {
+  display: flex;
+  align-items: center;
+  gap: var(--sp-sm);
+  font-family: var(--font-display);
+  font-size: 1.6rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  color: var(--blood);
+  text-transform: uppercase;
+}
+.nav__logo img { width: 32px; height: 32px; }
+.nav__logo span { color: var(--white); }
+
+.nav__links {
+  display: flex;
+  gap: var(--sp-lg);
+}
+.nav__links a {
+  font-family: var(--font-ui);
+  font-size: 0.85rem;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--ash);
+  position: relative;
+  padding-bottom: 2px;
+}
+.nav__links a::after {
+  content: '';
+  position: absolute;
+  left: 0; bottom: 0;
+  width: 0; height: 1px;
+  background: var(--blood);
+  transition: width var(--tx-mid);
+}
+.nav__links a:hover { color: var(--white); }
+.nav__links a:hover::after { width: 100%; }
+
+/* ── HERO ──────────────────────────────────────────────────── */
+.hero {
+  position: relative;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: var(--sp-2xl) var(--sp-lg) var(--sp-xl);
+  overflow: hidden;
+}
+
+.hero__bg {
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(ellipse 60% 40% at 50% 40%, #3a0a0a 0%, #0d0000 60%, #000 100%);
+  z-index: 0;
+}
+
+/* Animated grid lines */
+.hero__grid {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  background-image:
+    linear-gradient(rgba(255,0,0,0.06) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255,0,0,0.06) 1px, transparent 1px);
+  background-size: 60px 60px;
+  animation: gridDrift 20s linear infinite;
+}
+@keyframes gridDrift {
+  from { background-position: 0 0; }
+  to   { background-position: 60px 60px; }
+}
+
+.hero__content {
+  position: relative;
+  z-index: 1;
+  max-width: 860px;
+}
+
+.hero__eyebrow {
+  font-family: var(--font-body);
+  font-size: 0.75rem;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  color: var(--blood);
+  margin-bottom: var(--sp-md);
+  opacity: 0.8;
+}
+
+.hero__title {
+  font-family: var(--font-display);
+  font-size: clamp(3.5rem, 10vw, 8rem);
+  font-weight: 700;
+  line-height: 0.9;
+  text-transform: uppercase;
+  letter-spacing: -0.02em;
+  color: var(--white);
+  text-shadow:
+    0 0 40px rgba(255,0,0,0.6),
+    0 0 80px rgba(255,0,0,0.3),
+    4px 4px 0 var(--blood-dark);
+  margin-bottom: var(--sp-md);
+}
+.hero__title em {
+  font-style: normal;
+  color: var(--blood);
+}
+
+.hero__subtitle {
+  font-family: var(--font-body);
+  font-size: clamp(0.9rem, 2vw, 1.1rem);
+  color: var(--ash);
+  max-width: 560px;
+  margin: 0 auto var(--sp-xl);
+  line-height: 1.7;
+}
+
+.hero__cta {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--sp-sm);
+  padding: var(--sp-md) var(--sp-xl);
+  background: var(--blood);
+  color: var(--white);
+  font-family: var(--font-display);
+  font-size: 1rem;
+  font-weight: 700;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  border: none;
+  cursor: pointer;
+  clip-path: polygon(0 0, calc(100% - 12px) 0, 100% 12px, 100% 100%, 12px 100%, 0 calc(100% - 12px));
+  transition: background var(--tx-fast), transform var(--tx-fast), box-shadow var(--tx-fast);
+}
+.hero__cta:hover {
+  background: var(--white);
+  color: var(--blood);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(255,0,0,0.4);
+}
+
+/* Scrolling blood bar at hero bottom */
+.hero__divider {
+  position: absolute;
+  bottom: 0; left: 0; right: 0;
+  height: 3px;
+  background: var(--blood);
+  box-shadow: 0 0 20px var(--blood);
+}
+
+/* ── SECTION BASE ───────────────────────────────────────────── */
+section { padding: var(--sp-2xl) var(--sp-lg); }
+
+.section-label {
+  font-family: var(--font-body);
+  font-size: 0.7rem;
+  letter-spacing: 0.35em;
+  text-transform: uppercase;
+  color: var(--blood);
+  margin-bottom: var(--sp-sm);
+  display: flex;
+  align-items: center;
+  gap: var(--sp-sm);
+}
+.section-label::before {
+  content: '';
+  display: inline-block;
+  width: 24px;
+  height: 1px;
+  background: var(--blood);
+}
+
+.section-title {
+  font-family: var(--font-display);
+  font-size: clamp(2rem, 5vw, 3.5rem);
+  font-weight: 700;
+  text-transform: uppercase;
+  color: var(--white);
+  line-height: 1;
+  margin-bottom: var(--sp-lg);
+}
+
+.section-title span { color: var(--blood); }
+
+.section-intro {
+  font-size: 0.95rem;
+  color: var(--ash-dim);
+  max-width: 600px;
+  margin-bottom: var(--sp-xl);
+  line-height: 1.8;
+}
+
+/* ── RANKS SECTION ─────────────────────────────────────────── */
+#ranks {
+  background: var(--void-lift);
+  position: relative;
+}
+#ranks::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, var(--blood), transparent);
+}
+
+.ranks__grid {
+  display: flex;
+  gap: var(--sp-md);
+  flex-wrap: wrap;
+  margin-top: var(--sp-lg);
+}
+
+.rank-card {
+  flex: 1;
+  min-width: 120px;
+  border: 1px solid transparent;
+  border-radius: 4px;
+  padding: var(--sp-lg) var(--sp-md);
+  text-align: center;
+  background: var(--void);
+  transition: transform var(--tx-mid), border-color var(--tx-mid), box-shadow var(--tx-mid);
+  cursor: default;
+}
+.rank-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 12px 32px rgba(255,0,0,0.2);
+}
+
+.rank-card__letter {
+  font-family: var(--font-display);
+  font-size: 4rem;
+  font-weight: 700;
+  line-height: 1;
+  margin-bottom: var(--sp-sm);
+}
+.rank-card__name {
+  font-family: var(--font-body);
+  font-size: 0.65rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+}
+.rank-card__desc {
+  font-size: 0.78rem;
+  color: var(--ash-dim);
+  margin-top: var(--sp-sm);
+  line-height: 1.4;
+}
+
+.rank-card--d { border-color: #333; }
+.rank-card--d .rank-card__letter { color: var(--rank-d); }
+.rank-card--d:hover { border-color: var(--rank-d); box-shadow: 0 12px 32px rgba(136,136,136,0.2); }
+
+.rank-card--c { border-color: #1a3a1a; }
+.rank-card--c .rank-card__letter { color: var(--rank-c); }
+.rank-card--c:hover { border-color: var(--rank-c); box-shadow: 0 12px 32px rgba(68,204,68,0.2); }
+
+.rank-card--b { border-color: #1a1a3a; }
+.rank-card--b .rank-card__letter { color: var(--rank-b); }
+.rank-card--b:hover { border-color: var(--rank-b); box-shadow: 0 12px 32px rgba(68,136,255,0.2); }
+
+.rank-card--a { border-color: #3a2a0a; }
+.rank-card--a .rank-card__letter { color: var(--rank-a); }
+.rank-card--a:hover { border-color: var(--rank-a); box-shadow: 0 12px 32px rgba(255,204,0,0.2); }
+
+.rank-card--s { border-color: #3a0a0a; }
+.rank-card--s .rank-card__letter { color: var(--rank-s); text-shadow: 0 0 16px rgba(255,68,68,0.6); }
+.rank-card--s:hover { border-color: var(--rank-s); box-shadow: 0 12px 32px rgba(255,68,68,0.3); }
+
+.rank-card--p {
+  border-color: var(--blood);
+  background: rgba(255,0,0,0.05);
+  animation: pulse 3s ease-in-out infinite;
+}
+.rank-card--p .rank-card__letter {
+  color: var(--rank-p);
+  text-shadow: 0 0 24px rgba(255,0,0,0.9), 0 0 48px rgba(255,0,0,0.5);
+  font-size: 5rem;
+}
+.rank-card--p:hover { box-shadow: 0 12px 48px rgba(255,0,0,0.5); }
+@keyframes pulse {
+  0%, 100% { box-shadow: 0 0 8px rgba(255,0,0,0.3); }
+  50%       { box-shadow: 0 0 24px rgba(255,0,0,0.6); }
+}
+
+/* ── WEAPONS SECTION ───────────────────────────────────────── */
+#weapons {
+  background: var(--void);
+}
+
+.weapons__img-wrap {
+  width: 100%;
+  max-width: 900px;
+  margin: 0 auto var(--sp-xl);
+  border: 1px solid var(--blood-dim);
+  border-radius: 4px;
+  overflow: hidden;
+}
+.weapons__img-wrap img { width: 100%; }
+
+.weapons__grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: var(--sp-lg);
+}
+
+.weapon-card {
+  background: var(--void-lift);
+  border: 1px solid var(--blood-dim);
+  border-radius: 4px;
+  padding: var(--sp-lg);
+  transition: border-color var(--tx-mid), transform var(--tx-mid);
+  position: relative;
+  overflow: hidden;
+}
+.weapon-card::before {
+  content: '';
+  position: absolute;
+  left: 0; top: 0; bottom: 0;
+  width: 3px;
+  background: var(--blood);
+  transform: scaleY(0);
+  transform-origin: top;
+  transition: transform var(--tx-mid);
+}
+.weapon-card:hover {
+  border-color: var(--blood);
+  transform: translateX(4px);
+}
+.weapon-card:hover::before { transform: scaleY(1); }
+
+.weapon-card__header {
+  display: flex;
+  align-items: center;
+  gap: var(--sp-sm);
+  margin-bottom: var(--sp-sm);
+}
+.weapon-card__icon {
+  width: 28px; height: 28px;
+}
+.weapon-card__name {
+  font-family: var(--font-display);
+  font-size: 1.1rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--white);
+}
+.weapon-card__type {
+  font-size: 0.65rem;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+  color: var(--blood);
+  margin-bottom: var(--sp-sm);
+}
+.weapon-card__desc {
+  font-size: 0.82rem;
+  color: var(--ash-dim);
+  line-height: 1.6;
+}
+.weapon-card__tip {
+  margin-top: var(--sp-md);
+  padding: var(--sp-sm) var(--sp-md);
+  background: rgba(255,0,0,0.06);
+  border-left: 2px solid var(--blood);
+  font-size: 0.78rem;
+  color: var(--ash);
+  line-height: 1.5;
+}
+.weapon-card__tip strong {
+  color: var(--blood);
+  font-family: var(--font-ui);
+  text-transform: uppercase;
+  font-size: 0.68rem;
+  letter-spacing: 0.15em;
+  display: block;
+  margin-bottom: 2px;
+}
+
+/* ── TIPS SECTION ──────────────────────────────────────────── */
+#tips {
+  background: var(--void-lift);
+  position: relative;
+}
+#tips::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, var(--blood), transparent);
+}
+
+.tips__grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: var(--sp-lg);
+}
+
+.tip-card {
+  background: var(--void);
+  border: 1px solid #1a0000;
+  border-radius: 4px;
+  padding: var(--sp-lg);
+  transition: border-color var(--tx-mid), box-shadow var(--tx-mid);
+}
+.tip-card:hover {
+  border-color: var(--blood-dim);
+  box-shadow: 0 4px 24px rgba(255,0,0,0.1);
+}
+
+.tip-card__number {
+  font-family: var(--font-display);
+  font-size: 3rem;
+  font-weight: 700;
+  color: var(--blood-dim);
+  line-height: 1;
+  margin-bottom: var(--sp-sm);
+}
+.tip-card__title {
+  font-family: var(--font-display);
+  font-size: 1.15rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--white);
+  margin-bottom: var(--sp-sm);
+}
+.tip-card__body {
+  font-size: 0.82rem;
+  color: var(--ash-dim);
+  line-height: 1.7;
+}
+.tip-card__tag {
+  display: inline-block;
+  margin-top: var(--sp-md);
+  padding: 2px 10px;
+  background: rgba(255,0,0,0.12);
+  border: 1px solid var(--blood-dim);
+  border-radius: 2px;
+  font-size: 0.65rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--blood);
+}
+
+/* ── ENEMIES SECTION ───────────────────────────────────────── */
+#enemies {
+  background: var(--void);
+}
+
+.enemies__table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.85rem;
+}
+.enemies__table thead tr {
+  border-bottom: 2px solid var(--blood);
+}
+.enemies__table th {
+  font-family: var(--font-display);
+  font-size: 0.75rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--blood);
+  padding: var(--sp-sm) var(--sp-md);
+  text-align: left;
+}
+.enemies__table tbody tr {
+  border-bottom: 1px solid #1a0000;
+  transition: background var(--tx-fast);
+}
+.enemies__table tbody tr:hover {
+  background: rgba(255,0,0,0.04);
+}
+.enemies__table td {
+  padding: var(--sp-md);
+  color: var(--ash-dim);
+  vertical-align: top;
+}
+.enemies__table td:first-child {
+  color: var(--white);
+  font-family: var(--font-ui);
+  font-weight: 600;
+}
+.enemy-badge {
+  display: inline-block;
+  padding: 2px 8px;
+  border-radius: 2px;
+  font-size: 0.68rem;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  font-family: var(--font-body);
+}
+.enemy-badge--easy   { background: rgba(68,204,68,0.12); color: var(--rank-c); border: 1px solid rgba(68,204,68,0.3); }
+.enemy-badge--medium { background: rgba(255,204,0,0.12); color: var(--rank-a); border: 1px solid rgba(255,204,0,0.3); }
+.enemy-badge--hard   { background: rgba(255,68,68,0.12); color: var(--rank-s); border: 1px solid rgba(255,68,68,0.3); }
+.enemy-badge--boss   { background: rgba(255,0,0,0.2);   color: var(--blood);  border: 1px solid var(--blood); }
+
+/* ── FOOTER ─────────────────────────────────────────────────── */
+.footer {
+  background: var(--void);
+  border-top: 1px solid var(--blood-dim);
+  padding: var(--sp-xl) var(--sp-lg);
+  text-align: center;
+}
+.footer__logo {
+  font-family: var(--font-display);
+  font-size: 2rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--blood);
+  margin-bottom: var(--sp-md);
+}
+.footer__logo span { color: var(--ash-dim); }
+.footer__disclaimer {
+  font-size: 0.72rem;
+  color: var(--ash-dim);
+  line-height: 1.8;
+  max-width: 560px;
+  margin: 0 auto;
+}
+.footer__bar {
+  margin-top: var(--sp-lg);
+  height: 2px;
+  background: linear-gradient(90deg, transparent, var(--blood-dark), transparent);
+}
+
+/* ── UTILITY ─────────────────────────────────────────────────── */
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+.text-red   { color: var(--blood); }
+.text-gold  { color: var(--gold); }
+.text-white { color: var(--white); }
+.mono       { font-family: var(--font-body); }
+
+/* ── MOBILE ──────────────────────────────────────────────────── */
+@media (max-width: 768px) {
+  .nav__links { display: none; }
+  .ranks__grid { gap: var(--sp-sm); }
+  .rank-card { padding: var(--sp-md) var(--sp-sm); }
+  .rank-card__letter { font-size: 2.5rem; }
+  .rank-card--p .rank-card__letter { font-size: 3rem; }
+  .enemies__table { display: block; overflow-x: auto; }
+  section { padding: var(--sp-xl) var(--sp-md); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { animation: none !important; transition: none !important; }
+}

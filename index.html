@@ -1,0 +1,485 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="ULTRAKILL tips, tricks, weapon guides, enemy breakdowns and rank strategies. MACHINE, IS FUELED BY BLOOD." />
+
+  <title>ULTRAKILL — Tips &amp; Hits Guide</title>
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="src/icons/favicon.svg" />
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;600;700&family=Share+Tech+Mono&family=Rajdhani:wght@400;600;700&display=swap" rel="stylesheet" />
+
+  <!-- Main stylesheet -->
+  <link rel="stylesheet" href="src/style/main.css" />
+</head>
+<body>
+
+  <!-- ═══════════════════════════════════════════════════════
+       NAVIGATION
+  ════════════════════════════════════════════════════════════ -->
+  <nav class="nav">
+    <a href="#" class="nav__logo">
+      <img src="src/icons/favicon.svg" alt="" width="32" height="32" />
+      ULTRA<span>KILL</span>
+    </a>
+    <ul class="nav__links">
+      <li><a href="#ranks">Ranks</a></li>
+      <li><a href="#weapons">Weapons</a></li>
+      <li><a href="#tips">Tips</a></li>
+      <li><a href="#enemies">Enemies</a></li>
+    </ul>
+  </nav>
+
+  <!-- ═══════════════════════════════════════════════════════
+       HERO
+  ════════════════════════════════════════════════════════════ -->
+  <section class="hero" id="home">
+    <div class="hero__bg"></div>
+    <div class="hero__grid"></div>
+
+    <div class="hero__content">
+      <p class="hero__eyebrow">// Fan Guide · Tips &amp; Hits</p>
+
+      <h1 class="hero__title">
+        <em>ULTRA</em>KILL
+      </h1>
+
+      <p class="hero__subtitle">
+        MACHINE IS FUELED BY BLOOD.<br />
+        Master every rank, every weapon, every kill.
+        This is your combat manual for reaching PRIME.
+      </p>
+
+      <a href="#tips" class="hero__cta">
+        <img src="src/icons/icon-skull.svg" alt="" width="20" height="20" />
+        Start Grinding
+      </a>
+    </div>
+
+    <div class="hero__divider"></div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════════════════
+       RANKS
+  ════════════════════════════════════════════════════════════ -->
+  <section id="ranks">
+    <div class="container">
+      <p class="section-label">Combat Rating System</p>
+      <h2 class="section-title">Know Your <span>Rank</span></h2>
+      <p class="section-intro">
+        ULTRAKILL judges every encounter on style, speed, and variety.
+        Staying still, repeating moves, or taking damage tanks your rank.
+        Here's what every grade means and how to climb it.
+      </p>
+
+      <!-- Rank image -->
+      <div style="max-width:720px; margin: 0 auto 2rem; border:1px solid #3a0000; border-radius:4px; overflow:hidden;">
+        <img src="src/images/rank-display.svg" alt="All rank grades from D to P" style="width:100%;" />
+      </div>
+
+      <div class="ranks__grid">
+
+        <div class="rank-card rank-card--d">
+          <div class="rank-card__letter">D</div>
+          <div class="rank-card__name">DISMAL</div>
+          <div class="rank-card__desc">You're barely trying. Mix up your attacks or you'll stay here forever.</div>
+        </div>
+
+        <div class="rank-card rank-card--c">
+          <div class="rank-card__letter">C</div>
+          <div class="rank-card__name">CRUEL</div>
+          <div class="rank-card__desc">Decent start. You're fighting, but patterns are showing. Diversify.</div>
+        </div>
+
+        <div class="rank-card rank-card--b">
+          <div class="rank-card__letter">B</div>
+          <div class="rank-card__name">BRUTAL</div>
+          <div class="rank-card__desc">Things are getting spicy. Weapon swaps and movement keep you here.</div>
+        </div>
+
+        <div class="rank-card rank-card--a">
+          <div class="rank-card__letter">A</div>
+          <div class="rank-card__name">ANARCHIC</div>
+          <div class="rank-card__desc">Chaos in the best way. Parries, slams, and environment use rewarded.</div>
+        </div>
+
+        <div class="rank-card rank-card--s">
+          <div class="rank-card__letter">S</div>
+          <div class="rank-card__name">SUPREME</div>
+          <div class="rank-card__desc">Near-perfect combat. Every action has purpose. Blood pressure rising.</div>
+        </div>
+
+        <div class="rank-card rank-card--p">
+          <div class="rank-card__letter">P</div>
+          <div class="rank-card__name">PRIME</div>
+          <div class="rank-card__desc">The pinnacle. Perfect kills, zero damage, maximum variety. Ascension achieved.</div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════════════════
+       WEAPONS
+  ════════════════════════════════════════════════════════════ -->
+  <section id="weapons">
+    <div class="container">
+      <p class="section-label">Arsenal Breakdown</p>
+      <h2 class="section-title"><span>Weapons</span> Guide</h2>
+      <p class="section-intro">
+        Every gun in ULTRAKILL has a primary fire, alternate fire, and secrets to unlock.
+        Swapping weapons resets the style penalty — never stop cycling.
+      </p>
+
+      <div class="weapons__img-wrap">
+        <img src="src/images/weapons-banner.svg" alt="ULTRAKILL weapon lineup" />
+      </div>
+
+      <div class="weapons__grid">
+
+        <!-- Revolver -->
+        <div class="weapon-card">
+          <div class="weapon-card__header">
+            <img class="weapon-card__icon" src="src/icons/icon-gun.svg" alt="" />
+            <div class="weapon-card__name">Revolver</div>
+          </div>
+          <div class="weapon-card__type">Primary Arm · Blue / Red / Green</div>
+          <div class="weapon-card__desc">
+            The revolver is your most versatile weapon. High damage per shot and
+            coin tricks make it lethal at any range. Each variant unlocks a new
+            trick shot mechanic that chains into massive style combos.
+          </div>
+          <div class="weapon-card__tip">
+            <strong>Pro Tip</strong>
+            Shoot a coin mid-air and it reflects bullets at the nearest enemy — 
+            chain multiple coins for one-shot boss chunks.
+          </div>
+        </div>
+
+        <!-- Shotgun -->
+        <div class="weapon-card">
+          <div class="weapon-card__header">
+            <img class="weapon-card__icon" src="src/icons/icon-gun.svg" alt="" />
+            <div class="weapon-card__name">Shotgun</div>
+          </div>
+          <div class="weapon-card__type">Primary Arm · Blue / Red / Green</div>
+          <div class="weapon-card__desc">
+            Close-range devastation. The pump shotgun also functions as a movement tool —
+            fire it downward while in the air to gain extreme vertical height.
+            Core Eject variant launches a fiery module before reloading.
+          </div>
+          <div class="weapon-card__tip">
+            <strong>Pro Tip</strong>
+            Shotgun jumping (firing down mid-air) is one of the primary mobility
+            tools — combine it with a dash for massive map traversal.
+          </div>
+        </div>
+
+        <!-- Nailgun -->
+        <div class="weapon-card">
+          <div class="weapon-card__header">
+            <img class="weapon-card__icon" src="src/icons/icon-lightning.svg" alt="" />
+            <div class="weapon-card__name">Nailgun</div>
+          </div>
+          <div class="weapon-card__type">Primary Arm · Blue / Red / Green</div>
+          <div class="weapon-card__desc">
+            Sustained suppression fire perfect for melting crowds. The Attractor variant
+            pulls enemies together with magnetic nails — set it up, then fire your heavy
+            weapons into the cluster for devastating damage.
+          </div>
+          <div class="weapon-card__tip">
+            <strong>Pro Tip</strong>
+            The Sawblade alt-fire ricochets off walls. Bounce it into a group for
+            incredible style point generation.
+          </div>
+        </div>
+
+        <!-- Railcannon -->
+        <div class="weapon-card">
+          <div class="weapon-card__header">
+            <img class="weapon-card__icon" src="src/icons/icon-lightning.svg" alt="" />
+            <div class="weapon-card__name">Railcannon</div>
+          </div>
+          <div class="weapon-card__type">Heavy Arm · Blue / Red / Green</div>
+          <div class="weapon-card__desc">
+            Charged single-shot weapon that penetrates all enemies in a line.
+            The Electric Railcannon generates a chained lightning strike — use it
+            near clusters to arc massive damage across multiple targets.
+          </div>
+          <div class="weapon-card__tip">
+            <strong>Pro Tip</strong>
+            Fire the Railcannon through a Malicious Face beam to instantly destroy it,
+            saving you from the most dangerous hazard in the game.
+          </div>
+        </div>
+
+        <!-- Rocket Launcher -->
+        <div class="weapon-card">
+          <div class="weapon-card__header">
+            <img class="weapon-card__icon" src="src/icons/icon-star.svg" alt="" />
+            <div class="weapon-card__name">Rocket Launcher</div>
+          </div>
+          <div class="weapon-card__type">Heavy Arm · Blue / Red / Green</div>
+          <div class="weapon-card__desc">
+            Explosive area denial powerhouse. Rockets can be frozen mid-air using
+            the Freeze Frame ability and punched or shot into targets.
+            The S.R.S. Canon variant fires a tracking rocket that homes on marked targets.
+          </div>
+          <div class="weapon-card__tip">
+            <strong>Pro Tip</strong>
+            Freeze a rocket, then punch it (Whiplash or Knuckleblaster) to deal 
+            explosive melee damage in a massive burst — great for staggered bosses.
+          </div>
+        </div>
+
+        <!-- Feedbacker Arm -->
+        <div class="weapon-card">
+          <div class="weapon-card__header">
+            <img class="weapon-card__icon" src="src/icons/icon-blood.svg" alt="" />
+            <div class="weapon-card__name">Feedbacker</div>
+          </div>
+          <div class="weapon-card__type">Arm Slot · Blue Variant</div>
+          <div class="weapon-card__desc">
+            Your most essential tool for survival. Parrying projectiles and enemy attacks
+            with Feedbacker reflects them back with triple damage and restores health.
+            The timing window is forgiving — learn it immediately.
+          </div>
+          <div class="weapon-card__tip">
+            <strong>Pro Tip</strong>
+            Parrying a red-glowing skull projectile sends it back homing on its source —
+            critical for keeping your health bar topped off throughout an encounter.
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════════════════
+       TIPS & HITS
+  ════════════════════════════════════════════════════════════ -->
+  <section id="tips">
+    <div class="container">
+      <p class="section-label">Combat Manual</p>
+      <h2 class="section-title">Tips &amp; <span>Hits</span></h2>
+      <p class="section-intro">
+        Essential tactics for dominating every encounter.
+        Speed, style, and survival — prioritised in that order.
+      </p>
+
+      <div class="tips__grid">
+
+        <div class="tip-card">
+          <div class="tip-card__number">01</div>
+          <div class="tip-card__title">Never Stop Moving</div>
+          <div class="tip-card__body">
+            ULTRAKILL punishes stationary players brutally. Dash, slide, jump, and
+            rocket jump constantly. The game's AI tracks your last known position,
+            so being in motion makes you near-impossible to hit consistently.
+          </div>
+          <span class="tip-card__tag">Movement</span>
+        </div>
+
+        <div class="tip-card">
+          <div class="tip-card__number">02</div>
+          <div class="tip-card__title">Weapon Swap for Style</div>
+          <div class="tip-card__body">
+            Using the same weapon repeatedly tanks your style meter fast.
+            Cycle through all available weapons in a fight — even a single shot
+            from a secondary weapon resets the style decay timer on your primary.
+          </div>
+          <span class="tip-card__tag">Style</span>
+        </div>
+
+        <div class="tip-card">
+          <div class="tip-card__number">03</div>
+          <div class="tip-card__title">Parry Everything</div>
+          <div class="tip-card__body">
+            The Feedbacker arm parries any yellow-glowing or red-glowing projectile.
+            A successful parry heals you with reflected blood and sends the attack
+            back tripled in power. Against fast projectile-heavy enemies, parrying
+            is your main healing source.
+          </div>
+          <span class="tip-card__tag">Survival</span>
+        </div>
+
+        <div class="tip-card">
+          <div class="tip-card__number">04</div>
+          <div class="tip-card__title">Kill Fast, Heal Faster</div>
+          <div class="tip-card__body">
+            Blood pools drop on enemy death and slowly disappear. You absorb them
+            by walking over them. The faster you kill, the more blood is on the floor,
+            the more you can heal. Aggressive play is self-sustaining play.
+          </div>
+          <span class="tip-card__tag">Survival</span>
+        </div>
+
+        <div class="tip-card">
+          <div class="tip-card__number">05</div>
+          <div class="tip-card__title">Prioritise Dangerous Targets</div>
+          <div class="tip-card__body">
+            Malicious Faces, Mindflayers, and Virtues are the most threatening enemies
+            in any mixed encounter. Always focus burst-damage weapons on these first.
+            Leave slower melee enemies for last — they're easy to kite while you mop up.
+          </div>
+          <span class="tip-card__tag">Priority</span>
+        </div>
+
+        <div class="tip-card">
+          <div class="tip-card__number">06</div>
+          <div class="tip-card__title">Use the Environment</div>
+          <div class="tip-card__body">
+            Explosive barrels, acid pools, and floor hazards count toward your style score.
+            Launching an enemy into a hazard gives unique kill medals. Some arenas are
+            designed specifically around environmental kills — look for them.
+          </div>
+          <span class="tip-card__tag">Style</span>
+        </div>
+
+        <div class="tip-card">
+          <div class="tip-card__number">07</div>
+          <div class="tip-card__title">Slam for Ground Pounds</div>
+          <div class="tip-card__body">
+            Holding slide mid-air causes V1 to slam down with a powerful ground stomp.
+            This deals heavy damage in an AoE, launches airborne enemies, and can be
+            chained into a slide-dash for immediate repositioning.
+          </div>
+          <span class="tip-card__tag">Movement</span>
+        </div>
+
+        <div class="tip-card">
+          <div class="tip-card__number">08</div>
+          <div class="tip-card__title">Learn Boss Patterns Cold</div>
+          <div class="tip-card__body">
+            Every boss in ULTRAKILL has a repeating attack pattern with very readable
+            telegraphs. Before you try to P-rank a boss, spend one run simply observing
+            and dodging. Once the patterns are memorised, you can focus purely on offense.
+          </div>
+          <span class="tip-card__tag">Boss Fights</span>
+        </div>
+
+        <div class="tip-card">
+          <div class="tip-card__number">09</div>
+          <div class="tip-card__title">Whiplash Pulls &amp; Punches</div>
+          <div class="tip-card__body">
+            The Whiplash arm pulls small enemies toward you for a brutal close-range
+            combo, and pulls you toward large ones. Use it to drag shielded enemies
+            out of position and follow up instantly with a shotgun or railcannon.
+          </div>
+          <span class="tip-card__tag">Advanced</span>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════════════════
+       ENEMIES
+  ════════════════════════════════════════════════════════════ -->
+  <section id="enemies">
+    <div class="container">
+      <p class="section-label">Threat Assessment</p>
+      <h2 class="section-title"><span>Enemy</span> Breakdown</h2>
+      <p class="section-intro">
+        Know what you're fighting before it kills you.
+        Weaknesses, behaviours, and priority ratings for every type.
+      </p>
+
+      <table class="enemies__table">
+        <thead>
+          <tr>
+            <th>Enemy</th>
+            <th>Threat</th>
+            <th>Key Behaviour</th>
+            <th>Weakness / Counter</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Filth</td>
+            <td><span class="enemy-badge enemy-badge--easy">Easy</span></td>
+            <td>Charges directly. Very slow. Low health pool.</td>
+            <td>Any weapon. Shotgun one-shots early game.</td>
+          </tr>
+          <tr>
+            <td>Drone</td>
+            <td><span class="enemy-badge enemy-badge--easy">Easy</span></td>
+            <td>Hovers, fires slow tracking bullets. Groups are annoying.</td>
+            <td>Revolver headshots or nailgun burst. Parry their bullets back.</td>
+          </tr>
+          <tr>
+            <td>Soldier</td>
+            <td><span class="enemy-badge enemy-badge--medium">Medium</span></td>
+            <td>Fires shotgun blasts and retreats. Will take cover.</td>
+            <td>Aggressive pressure prevents their retreat. Railcannon through walls.</td>
+          </tr>
+          <tr>
+            <td>Streetcleaner</td>
+            <td><span class="enemy-badge enemy-badge--medium">Medium</span></td>
+            <td>Launches flamethrower streams. Explosive when killed.</td>
+            <td>Shoot from medium range. Don't get caught in the death explosion.</td>
+          </tr>
+          <tr>
+            <td>Mindflayer</td>
+            <td><span class="enemy-badge enemy-badge--hard">Hard</span></td>
+            <td>Teleports constantly, spawns projectile walls. Very aggressive.</td>
+            <td>Railcannon one-tap during teleport stun. Don't let it dictate distance.</td>
+          </tr>
+          <tr>
+            <td>Malicious Face</td>
+            <td><span class="enemy-badge enemy-badge--hard">Hard</span></td>
+            <td>Fires a sustained death beam. Tracks movement predictively.</td>
+            <td>Shoot through the beam with Railcannon to instantly delete it.</td>
+          </tr>
+          <tr>
+            <td>Virtue</td>
+            <td><span class="enemy-badge enemy-badge--hard">Hard</span></td>
+            <td>Shields nearby enemies. Fires electric bolts. Priority target.</td>
+            <td>Destroy the shield with a charged attack, then burst it down fast.</td>
+          </tr>
+          <tr>
+            <td>Hideous Mass</td>
+            <td><span class="enemy-badge enemy-badge--hard">Hard</span></td>
+            <td>Massive tank. Arms flail in AoE. Hard to stagger.</td>
+            <td>Railcannon core shots. Rocket launcher clusters. Stay airborne.</td>
+          </tr>
+          <tr>
+            <td>V2 (Boss)</td>
+            <td><span class="enemy-badge enemy-badge--boss">Boss</span></td>
+            <td>Mirrors your own moveset and weapon usage. Parries your shots.</td>
+            <td>Coins distract it. Punish with heavy arms while its parry is recovering.</td>
+          </tr>
+          <tr>
+            <td>Gabriel (Boss)</td>
+            <td><span class="enemy-badge enemy-badge--boss">Boss</span></td>
+            <td>Extremely fast, multi-phase. Quotes scripture while killing you.</td>
+            <td>Learn every pattern. Parry the glowing sword lunges. Railcannon between combos.</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════════════════
+       FOOTER
+  ════════════════════════════════════════════════════════════ -->
+  <footer class="footer">
+    <div class="footer__logo">ULTRA<span>KILL</span></div>
+    <p class="footer__disclaimer">
+      This is an unofficial fan-made guide and is not affiliated with or endorsed by
+      Arsi "Hakita" Patala or New Blood Interactive. ULTRAKILL is developed by
+      Arsi "Hakita" Patala. All game content, characters, and lore belong to their
+      respective owners. <br /><br />
+      MACHINE IS FUELED BY BLOOD.
+    </p>
+    <div class="footer__bar"></div>
+  </footer>
+
+</body>
+</html>

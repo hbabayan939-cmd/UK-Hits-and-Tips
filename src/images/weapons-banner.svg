@@ -1,0 +1,37 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="300" viewBox="0 0 1200 300">
+  <rect width="1200" height="300" fill="#050000"/>
+  <!-- Revolver -->
+  <g transform="translate(100,150)">
+    <rect x="-60" y="-15" width="120" height="30" rx="5" fill="#664444"/>
+    <circle cx="0" cy="0" r="25" fill="#553333" stroke="#ff4444" stroke-width="2"/>
+    <rect x="40" y="-8" width="50" height="16" rx="3" fill="#664444"/>
+    <text x="0" y="60" text-anchor="middle" fill="#ff4444aa" font-size="13" font-family="monospace">REVOLVER</text>
+  </g>
+  <!-- Shotgun -->
+  <g transform="translate(350,150)">
+    <rect x="-80" y="-12" width="160" height="24" rx="4" fill="#446644"/>
+    <rect x="50" y="-8" width="60" height="16" rx="3" fill="#335533"/>
+    <text x="0" y="60" text-anchor="middle" fill="#44cc44aa" font-size="13" font-family="monospace">SHOTGUN</text>
+  </g>
+  <!-- Nailgun -->
+  <g transform="translate(600,150)">
+    <rect x="-70" y="-10" width="140" height="20" rx="3" fill="#446666"/>
+    <circle cx="-50" cy="0" r="14" fill="#335555"/>
+    <circle cx="-20" cy="0" r="14" fill="#335555"/>
+    <circle cx="10" cy="0" r="14" fill="#335555"/>
+    <text x="0" y="60" text-anchor="middle" fill="#44ccccaa" font-size="13" font-family="monospace">NAILGUN</text>
+  </g>
+  <!-- Railcannon -->
+  <g transform="translate(850,150)">
+    <rect x="-90" y="-8" width="180" height="16" rx="3" fill="#664466"/>
+    <rect x="80" y="-14" width="30" height="28" rx="3" fill="#553355"/>
+    <line x1="-90" y1="0" x2="110" y2="0" stroke="#cc44ccaa" stroke-width="3"/>
+    <text x="0" y="60" text-anchor="middle" fill="#cc44ccaa" font-size="13" font-family="monospace">RAILCANNON</text>
+  </g>
+  <!-- Rocket Launcher -->
+  <g transform="translate(1100,150)">
+    <rect x="-60" y="-18" width="120" height="36" rx="8" fill="#664444"/>
+    <circle cx="60" cy="0" r="20" fill="#553333" stroke="#ff8844" stroke-width="2"/>
+    <text x="0" y="65" text-anchor="middle" fill="#ff8844aa" font-size="11" font-family="monospace">ROCKET LAUNCHER</text>
+  </g>
+</svg>
